@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  content: MyString
+  content: MyText
 
 two:
-  content: MyString
+  content: MyText
 # == Schema Information
 #
-# Table name: items
+# Table name: tasks
 #
 #  id         :integer         not null, primary key
-#  content    :string(255)
+#  content    :text
 #  created_at :datetime
 #  updated_at :datetime
 #

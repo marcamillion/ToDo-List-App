@@ -1,16 +1,16 @@
 require 'test_helper'
 
-class ItemTest < ActiveSupport::TestCase
+class TaskTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
 end
 # == Schema Information
 #
-# Table name: items
+# Table name: tasks
 #
 #  id         :integer         not null, primary key
-#  content    :string(255)
+#  content    :text
 #  created_at :datetime
 #  updated_at :datetime
 #

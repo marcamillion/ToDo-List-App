@@ -1,10 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Item:</b>
-  <%= @list.item %>
-</p>
+<h2><%= @list.name %></h2>
 
+<%= link_to 'New Item', new_list_task_path(@list) %>
+
+<%# @list.each do |i| %>
+    
+
+    
+<%# end %>
 
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
