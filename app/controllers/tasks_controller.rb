@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+	before_filter :find_list
   # GET /tasks
   # GET /tasks.json
   def index
@@ -19,12 +20,13 @@ class TasksController < ApplicationController
       format.html # show.html.erb
       format.json { render :json => @task }
     end
+		
   end
 
   # GET /tasks/new
   # GET /tasks/new.json
   def new
-		@list = List.find(params[:list_id])
+		# @list = List.find(params[:list_id])
     @task = @list.tasks.new
 
     respond_to do |format|
@@ -45,11 +47,9 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, :notice => 'Task was successfully created.' }
-        format.json { render :json => @task, :status => :created, :location => @task }
+        format.html { redirect_to list_path(@list), :notice => 'Task was successfully created.' }
       else
         format.html { render :action => "new" }
-        format.json { render :json => @task.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,7 +61,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.update_attributes(params[:task])
-        format.html { redirect_to list_tasks_url(@list), :notice => 'Task was successfully updated.' }
+        format.html { redirect_to list_path(@list), :notice => 'Task was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
@@ -77,8 +77,12 @@ class TasksController < ApplicationController
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to list_tasks_url(@list), :notice => "Task deleted." }
+      format.html { redirect_to list_path(@list), :notice => "Task deleted." }
       format.json { head :ok }
     end
   end
+
+	def find_list
+		@list = List.find(params[:list_id])
+	end
 end

@@ -2,11 +2,23 @@
 <html>
 <head>
   <title>Todo</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css", "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+    <%- flash.each do |name, msg| -%>
+        <% if name == :error %>
+            <%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-message block-message error" %>
+        <% elsif name == :notice %>
+            <%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-message block-message success" %>
+        <% elsif name == :warning %>
+            <%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-message block-message warning" %>
+        <% elsif name == :warning && name == :error %>
+            <%= content_tag :div, msg, :id => "flash_#{name}", :class => "alert-message block-message warning" %>
+        <% end %>
+    <%- end -%>
 
 <%= yield %>
 

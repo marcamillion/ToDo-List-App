@@ -8,16 +8,17 @@
     <th></th>
   </tr>
 
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.content %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.content %></td>
+      <td><%= link_to 'Show', list_task_path(@list, task) %></td>
+      <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
+      <td><%= link_to 'Destroy', list_task_path(@list, task), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New Task', new_task_path %>
+  <%= link_to 'New Task', new_list_task_path %>
+  <%= link_to 'Home', root_path %>

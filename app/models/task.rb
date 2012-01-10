@@ -12,5 +12,6 @@ end
 #  content    :text
 #  created_at :datetime
 #  updated_at :datetime
+#  list_id    :integer
 #
 
