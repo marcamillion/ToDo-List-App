@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item: MyString
+
+two:
+  item: MyString
+# == Schema Information
+#
+# Table name: lists
+#
+#  id         :integer         not null, primary key
+#  item       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
