@@ -9,7 +9,6 @@
 <% @list.tasks.each do |task| %>
   <tr>
     <td><%= best_in_place task, :content, :path => list_task_path(@list, task) %></td>
-    <td><%= link_to 'Show', list_task_path(@list, task) %></td>
     <td><%= link_to 'Destroy', list_task_path(@list, task), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
