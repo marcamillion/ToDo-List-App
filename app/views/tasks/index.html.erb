@@ -1,5 +1,7 @@
 <h1>Listing tasks</h1>
 
+<%= link_to 'New Task', new_list_task_path, :class => "btn large primary", :id => 'new-task' %><br />
+
 <table>
   <tr>
     <th>Content</th>
@@ -20,5 +22,5 @@
 
   <br />
 
-  <%= link_to 'New Task', new_list_task_path %>
-  <%= link_to 'Home', root_path %>
+
+  <%= link_to 'Home', root_path, :class => "btn small info" %>
