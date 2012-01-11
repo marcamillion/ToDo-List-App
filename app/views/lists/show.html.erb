@@ -1,7 +1,7 @@
-<table>
-<h2><%= @list.name %></h2><%= link_to 'Edit List Name', edit_list_path(@list) %><br /><br />
+<%= link_to 'Home', root_path, :class => "btn small info" %>
 
-<%= link_to 'Add New Task to List', new_list_task_path(@list) %> <br /><br />
+<table>
+<h2><%= @list.name %></h2>
 
 <br />
 
@@ -17,7 +17,6 @@
 
 <br />
 
-<%= link_to 'Home', root_path, :class => "btn small info" %>
-
+<%= link_to 'Add New Task to List', new_list_task_path(@list), :class => "btn large primary" %> <br /><br />
 
 
