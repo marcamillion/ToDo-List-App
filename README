@@ -2,8 +2,12 @@
 
 This app is just a basic app that allows you to create to-do lists.
 
+I did this, as part of my Rails 3 learning process.
+
 The trickiest part of this app, for me, was working through the nested routing of a list/:id/task/:id.
 
-It's built on Rails 3.1.3, uses the 'best-in-place' gem for in place editing.
+It's built on Rails 3.1.3, uses the 'best-in-place' gem for in place editing, and uses very basic styles from Twitter's Bootstrap - http://twitter.github.com/bootstrap/.
 
-A live version is hosted on Heroku and can be seen here: http://blooming-ice-1294.herokuapp.com/
+A live version is hosted on Heroku and can be seen here: 
+
+http://blooming-ice-1294.herokuapp.com
